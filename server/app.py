@@ -24,7 +24,7 @@ def create_message():
     data = request.get_json()
     message = Message(
         body = data.get('body'),
-        message = data.get('username')
+        username = data.get('username')  
     )
     db.session.add(message)
     db.session.commit()
@@ -52,4 +52,3 @@ def messages_by_id(id):
 
 if __name__ == '__main__':
     app.run(port=5555)
-
